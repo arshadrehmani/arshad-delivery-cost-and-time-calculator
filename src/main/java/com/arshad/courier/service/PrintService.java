@@ -12,11 +12,6 @@ import com.arshad.courier.model.PackageInfo;
 
 public class PrintService {
 	
-	@Deprecated
-	public static void printResults(String packageId, int discountAmount, int finalDeliveryCost, double deliveryTime) {
-		System.out.println(packageId+" "+ discountAmount +" "+finalDeliveryCost + " " + deliveryTime);
-	}
-	
 	/**
 	 * Uses supplied PackageInfoList to print the results to console.
 	 * @param packageInfoList

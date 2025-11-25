@@ -65,28 +65,6 @@ public class DeliveryTimeEstimator {
 			shipmentList.add(shipment);
 		}
 		
-		//temp test code for testing sorting base on weight and distance
-		/*
-		Shipment ship = new Shipment();
-		ship.addPackage(new PackageInfo("VEry first", 185, 100,"Code1"));
-		shipmentList.add(ship);
-		
-		Shipment ship2 = new Shipment();
-		ship2.addPackage(new PackageInfo("Before last-", 110, 50,"Code1"));
-		shipmentList.add(ship2);
-		
-		Shipment ship3 = new Shipment();
-		ship3.addPackage(new PackageInfo("In-Last", 110, 150,"Code1"));
-		shipmentList.add(ship3);
-
-		Shipment ship4 = new Shipment();
-		ship4.addPackage(new PackageInfo("Mid", 155, 80,"Code1"));
-		shipmentList.add(ship4);
-		
-		System.err.println(shipmentList);
-		*/
-		
-		
 		shipmentList.sort((s1, s2) -> {
             if (s1.getWeight() != s2.getWeight()) {
                 return Integer.compare(s2.getWeight(), s1.getWeight()); // heavier first
@@ -95,8 +73,6 @@ public class DeliveryTimeEstimator {
             }
         });
 		
-		//System.out.println(shipmentList);
-		////////////////////
 		int noOfVehicles = vehicleInfo.getNoOfVehicles();
 		int maxSpeed = vehicleInfo.getMaxSpeed();
 		

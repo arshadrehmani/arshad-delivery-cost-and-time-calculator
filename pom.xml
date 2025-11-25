@@ -6,7 +6,25 @@
 	<artifactId>arshad-delivery-cost-and-time-calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Arshad delivery Cost and Time calculator</name>
-	<description>Calculates Delivery Cost, Discount and Time for package deliveries.</description>
+	<description>Calculates Delivery Cost, Discount and Time for package
+		deliveries.</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.3.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.arshad.courier.cli.DeliveryApp</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 		<!--

@@ -18,7 +18,7 @@ import com.arshad.courier.service.PrintService;
  * 
  * @author Arshad
  */
-public class DeliveryCostApp {
+public class DeliveryApp {
 
 	public static void main(String[] args) {
 

@@ -27,10 +27,5 @@ public class DiscountRulesService {
 	public static Map<String, DiscountRule> getDiscountRules() {
 		return couponAndRulesMap;
 	}
-	
-	//Not used currently
-	/*
-	public static DiscountRule getDiscountRule(String couponCode) {
-		return couponAndRulesMap.get(couponCode);
-	}*/
+
 }

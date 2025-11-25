@@ -15,30 +15,6 @@ public class DeliveryCostEstimator {
 
 	private static Map<String, DiscountRule> discountRules = DiscountRulesService.getDiscountRules();;
 
-	@Deprecated
-	public static int[] estimateDeliveryCost(int baseDeliveryCost, PackageInfo packageInfo) {
-
-		int deliveryCost = baseDeliveryCost + packageInfo.getPackageWeight() * 10
-				+ packageInfo.getPackageDistance() * 5;
-
-		int discountAmount = 0;
-
-		if (discountRules.containsKey(packageInfo.getCouponCode())) {
-			DiscountRule discountRule = discountRules.get(packageInfo.getCouponCode());
-			if (discountRule.isApplicable(packageInfo.getPackageDistance(), packageInfo.getPackageWeight())) {
-				discountAmount = (deliveryCost * discountRule.getDiscountPercentage() / 100);
-				deliveryCost = deliveryCost - discountAmount;
-
-			}
-		}
-
-		packageInfo.setDeliveryCost(deliveryCost);
-		packageInfo.setDiscountAmount(discountAmount);
-
-		return new int[] { discountAmount, deliveryCost };
-
-	}
-
 	/**
 	 * Uses supplied {@code baseDeliveryCost} to calculate base cost. Also, gets the
 	 * Discount Rules using {@link DiscountRulesService} and tries to apply the discounts when applicable. 
