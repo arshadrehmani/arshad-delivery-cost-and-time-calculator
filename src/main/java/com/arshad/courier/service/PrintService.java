@@ -18,6 +18,8 @@ public class PrintService {
 	 */
 	public static void printResults(List<PackageInfo> packageInfoList) {
 		
+		System.out.println("\nResult:");
+
 		for(PackageInfo pkg: packageInfoList) {
 			System.out.println(pkg.getPackageId()+" "+ pkg.getDiscountAmount() +" "+ pkg.getDeliveryCost() + " " + pkg.getDeliveryTime());
 		}

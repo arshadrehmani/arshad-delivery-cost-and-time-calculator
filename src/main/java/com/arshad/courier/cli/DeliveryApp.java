@@ -24,6 +24,8 @@ public class DeliveryApp {
 
 		List<PackageInfo> packageInfoList = new ArrayList<>();
 
+		System.out.println("Enter Input:");
+
 		try (Scanner scanner = new Scanner(System.in)) {
 
 			int baseDeliveryCost = scanner.nextInt();
